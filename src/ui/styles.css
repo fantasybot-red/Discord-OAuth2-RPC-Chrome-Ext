@@ -1,0 +1,106 @@
+/* Shared base: adaptive tokens, system typography, thin scrollbars.
+   No universal margin/padding reset; Chakra preflight owns element defaults. */
+:root {
+  --app-bg: #ffffff;
+  --app-text: #09090b;
+  --app-scroll-thumb: rgba(128, 128, 128, 0.4);
+  --app-scroll-thumb-hover: rgba(128, 128, 128, 0.65);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --app-bg: #1a1a1a;
+    --app-text: #f4f4f5;
+  }
+}
+
+.dark {
+  --app-bg: #1a1a1a;
+  --app-text: #f4f4f5;
+}
+
+.light {
+  --app-bg: #ffffff;
+  --app-text: #09090b;
+}
+
+/* The document is the single vertical scroller. No overflow rules on
+   html/body, so the sticky header keeps scrolling with the page. */
+html {
+  scrollbar-width: thin;
+  scrollbar-color: var(--app-scroll-thumb) transparent;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  min-width: 280px;
+  background-color: var(--app-bg);
+  color: var(--app-text);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  font-size: 14px;
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+#root {
+  min-height: 100vh;
+}
+
+/* Inner scroll areas (log list, select menu) use the same thin style. */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: var(--app-scroll-thumb) transparent;
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--app-scroll-thumb);
+  border-radius: 9999px;
+  border: 2px solid transparent;
+  background-clip: padding-box;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--app-scroll-thumb-hover);
+  background-clip: padding-box;
+}
+
+.ui-label {
+  display: block;
+  font-size: 13px;
+  font-weight: 600;
+  color: inherit;
+  margin-bottom: 5px;
+}
+
+.ui-label-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 5px;
+}
+
+.ui-label-hint {
+  font-size: 11px;
+  font-weight: 400;
+  opacity: 0.7;
+}
+
+@keyframes spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+.animate-spin {
+  animation: spin 1s linear infinite;
+}

@@ -1,0 +1,31 @@
+{
+  "name": "discord_oauth2_rpc",
+  "type": "module",
+  "version": "1.0.0",
+  "private": true,
+  "license": "MIT",
+  "author": "The DT",
+  "description": "POC of https://github.com/aiko-chan-ai/Discord-OAuth2-RPC on chrome extension",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc -b && vite build",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "@chakra-ui/react": "^3.38.0",
+    "@emotion/react": "^11.14.0",
+    "react": "^19.2.4",
+    "react-dom": "^19.2.4"
+  },
+  "devDependencies": {
+    "@crxjs/vite-plugin": "^2.4.0",
+    "@types/chrome": "^0.1.37",
+    "@types/node": "^25.5.0",
+    "@types/react": "^19.2.14",
+    "@types/react-dom": "^19.2.3",
+    "@vitejs/plugin-react": "^6.0.1",
+    "typescript": "~5.9.3",
+    "vite": "^8.0.0",
+    "vite-plugin-zip-pack": "^1.2.4"
+  }
+}
